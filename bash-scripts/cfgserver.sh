@@ -1,2 +1,2 @@
 #!/bin/bash
-apt update && aptuprade -y && apt autoremove -y
+apt update && aptupgrade -y && apt autoremove -y

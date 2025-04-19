@@ -1,14 +1,14 @@
 # ACTUAL BUDGET
 
-**Container**: actual-budget  
-**Server**: VPS  
-**Host Path**: `/root/docker/actual`
+**Container**: container_name  
+**Server**: vps_or_local_server  
+**Host Path**: `/path/to/container_dir`
 
 ---
 
 ## [▶️](https://github.com/ikatyang/emoji-cheat-sheet/blob/master/README.md?utm_source=chatgpt.com)  Overview
 
-[Actual](https://actualbudget.org) is a self-hosted personal budgeting app based on the envelope budgeting system. It synchronizes automatically across all user devices.
+[Link_to_official_website](https://website_url) Description_of_service
 
 ---
 
@@ -18,14 +18,14 @@
 |--------------|----------------------|
 | Dockerized?  | Yes (docker-compose) |
 | Compose File | [`docker-compose.yml`](./docker-compose.yml) |
-| Env File     | No |
+| Env File     | [`.env`](./.env) |
 | Bind Mounts  | `./data` → `/data`  |
 
 ## [:globe_with_meridians:](https://github.com/ikatyang/emoji-cheat-sheet/blob/master/README.md?utm_source=chatgpt.com) Docker Network
 
 | Network  | IP Address  | Gateway  | MAC Address  |
 |----------|-------------|----------|--------------|
-| actual_default	| 172.23.0.2	| 172.23.0.1	| 02:42:ac:17:00:02	 |
+| docker_network	| 172.23.0.2	| 172.23.0.1	| 00:00:00:00:00:00	 |
 
 ---
 
@@ -33,11 +33,11 @@
 
 | Access Type     | Value / URL                             |
 |------------------|------------------------------------------|
-| Public Hostname  | [budget.tikishack.com](https://budget.tikishack.com) *(via [Cloudflare Tunnel](https://one.dash.cloudflare.com/0889c842407ffe50bd89d900e389f5b7/networks/tunnels/7f2310e1-5350-4ab6-9c94-bb92159f1851/public-hostname/budget.tikishack.com/1))* |
-| VPS IP:PORT         | [107.172.201.30:8044](http://107.172.201.30:8044) |
+| Public Hostname  | [servicename.tikishack.com](https://servicename.tikishack.com) *(via [Cloudflare Tunnel](https://one.dash.cloudflare.com/0889c842407ffe50bd89d900e389f5b7/networks/tunnels/7f2310e1-5350-4ab6-9c94-bb92159f1851/public-hostname/budget.tikishack.com/1))* |
+| VPS IP:PORT         | [107.172.201.30:12345](http://107.172.201.30:12345) |
 | Auth Required?   | Yes |
 | Username         | N/A |
-| Password         | ZFv$Ch4$*z%28F*tz6aeWR7Y |
+| Password         | ChangeMe98765 |
 
 ---
 
@@ -97,6 +97,10 @@ docker compose up -d
 ---
 
 ## [:books:](https://github.com/ikatyang/emoji-cheat-sheet/blob/master/README.md?utm_source=chatgpt.com)  References
-- Official Docs
-- Github repo
-- Any other links or dashboards
+- [Official Docs](https://docs.servicename.com
+- [Github repo](https://github.com/service_dev/repo_name)
+- [Support forum](https://community.example.com)
+- [Reddit](https://www.reddit.com/r/subreddit)
+- [Google Search](https://www.google.com/search?q=search_term)
+- [Dokuwiki link](https://labdocs.donferris.me/service_name)
+- [other links](https://example.com)

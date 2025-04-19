@@ -1,0 +1,102 @@
+# ACTUAL BUDGET
+
+**Container**: actual-budget  
+**Server**: VPS  
+**Host Path**: `/root/docker/actual`
+
+---
+
+## [▶️](https://github.com/ikatyang/emoji-cheat-sheet/blob/master/README.md?utm_source=chatgpt.com)  Overview
+
+[Actual](https://actualbudget.org) is a self-hosted personal budgeting app based on the envelope budgeting system. It synchronizes automatically across all user devices.
+
+---
+
+## [⚙️](https://github.com/ikatyang/emoji-cheat-sheet/blob/master/README.md?utm_source=chatgpt.com)  Docker Configuration
+
+| Key          | Value                |
+|--------------|----------------------|
+| Dockerized?  | Yes (docker-compose) |
+| Compose File | [`docker-compose.yml`](./docker-compose.yml) |
+| Env File     | No |
+| Bind Mounts  | `./data` → `/data`  |
+
+## [:globe_with_meridians:](https://github.com/ikatyang/emoji-cheat-sheet/blob/master/README.md?utm_source=chatgpt.com) Docker Network
+
+| Network  | IP Address  | Gateway  | MAC Address  |
+|----------|-------------|----------|--------------|
+| actual_default	| 172.23.0.2	| 172.23.0.1	| 02:42:ac:17:00:02	 |
+
+---
+
+## [:key:](https://github.com/ikatyang/emoji-cheat-sheet/blob/master/README.md?utm_source=chatgpt.com)  Access
+
+| Access Type     | Value / URL                             |
+|------------------|------------------------------------------|
+| Public Hostname  | [budget.tikishack.com](https://budget.tikishack.com) *(via [Cloudflare Tunnel](https://one.dash.cloudflare.com/0889c842407ffe50bd89d900e389f5b7/networks/tunnels/7f2310e1-5350-4ab6-9c94-bb92159f1851/public-hostname/budget.tikishack.com/1))* |
+| VPS IP:PORT         | [107.172.201.30:8044](http://107.172.201.30:8044) |
+| Auth Required?   | Yes |
+| Username         | N/A |
+| Password         | ZFv$Ch4$*z%28F*tz6aeWR7Y |
+
+---
+
+## [☁️](https://github.com/ikatyang/emoji-cheat-sheet/blob/master/README.md?utm_source=chatgpt.com)  Cloudflare Tunnel
+
+- **Tunnel Name**: `VPS`
+- **Ingress Rule** (Caddy/Cloudflare config): N/A (_deferred_)
+
+---
+
+## [📎](https://github.com/ikatyang/emoji-cheat-sheet/blob/master/README.md?utm_source=chatgpt.com)  Notes & Customizations
+- Any volumes, plugins, CLI overrides
+- Any upgrade instructions
+- App-specific tweaks
+
+---
+
+## [🛠️](https://github.com/ikatyang/emoji-cheat-sheet/blob/master/README.md?utm_source=chatgpt.com)  Useful Commands
+### Start container
+```bash
+docker compose up -d
+```
+### View logs
+```bash
+docker compose logs -f
+```
+### Open shell inside container
+```bash
+docker exec -it actual /bin/Backup on $(date +'%Y-%m-%d')sh
+```
+
+---
+
+## [💾](https://github.com/ikatyang/emoji-cheat-sheet/blob/master/README.md?utm_source=chatgpt.com)  Backup & Restore
+
+### Backup
+- Backup archives stored in BACKUP/
+- To create a new backup:
+```bash
+tar -czf BACKUP/actual-$(date +'%Y-%m-%d').tar.gz ./data
+```
+- Commit & push to GitHub to version it
+```bash
+git add . && git commit -m "Backup on $(date +'%Y-%m-%d') " && git push
+```
+### Restore
+1.	Clone the repo
+2.	Extract the desired archive to ./data:
+```bash
+tar -xzf BACKUP/actual-2025-04-18.tar.gz -C ./data
+```
+3. Recreate the container:
+```bash
+docker compose up -d
+```
+
+---
+
+## [:books:](https://github.com/ikatyang/emoji-cheat-sheet/blob/master/README.md?utm_source=chatgpt.com)  References
+- Official Docs
+- Github repo
+- Any other links or dashboards

@@ -55,19 +55,14 @@
 
 ---
 
-## [🛠️](https://github.com/ikatyang/emoji-cheat-sheet/blob/master/README.md?utm_source=chatgpt.com)  Useful Commands
-### Start container
-```bash
-docker compose up -d
-```
-### View logs
-```bash
-docker compose logs -f
-```
-### Open shell inside container
-```bash
-docker exec -it actual /bin/Backup on $(date +'%Y-%m-%d')sh
-```
+## [:books:](https://github.com/ikatyang/emoji-cheat-sheet/blob/master/README.md?utm_source=chatgpt.com)  References
+- [Official Docs](https://docs.servicename.com
+- [Github repo](https://github.com/service_dev/repo_name)
+- [Support forum](https://community.example.com)
+- [Reddit](https://www.reddit.com/r/subreddit)
+- [Google Search](https://www.google.com/search?q=search_term)
+- [Dokuwiki link](https://labdocs.donferris.me/service_name)
+- [other links](https://example.com)
 
 ---
 
@@ -96,11 +91,51 @@ docker compose up -d
 
 ---
 
-## [:books:](https://github.com/ikatyang/emoji-cheat-sheet/blob/master/README.md?utm_source=chatgpt.com)  References
-- [Official Docs](https://docs.servicename.com
-- [Github repo](https://github.com/service_dev/repo_name)
-- [Support forum](https://community.example.com)
-- [Reddit](https://www.reddit.com/r/subreddit)
-- [Google Search](https://www.google.com/search?q=search_term)
-- [Dokuwiki link](https://labdocs.donferris.me/service_name)
-- [other links](https://example.com)
+## [🛠️](https://github.com/ikatyang/emoji-cheat-sheet/blob/master/README.md?utm_source=chatgpt.com)  Useful Commands
+### Start Docker container
+```bash
+docker compose up -d
+```
+### View Docker logs
+```bash
+docker compose logs -f
+```
+### Open shell inside Docker container
+```bash
+docker exec -it actual /bin/Backup on $(date +'%Y-%m-%d')sh
+```
+### Git - Stage + Commit + Push Changes
+```bash
+git add . && git commit -m "Update on $(date +'%Y-%m-%d')" && git push
+``` 
+### Git - View Current Status
+```bash
+git status
+```
+### Git - Pull Latest Changes
+```bash
+git pull
+```
+### Git - View Commit History (compact)
+```bash
+git log --oneline --graph --decorate --all
+```
+### Git - Revert the Most Recent Commit (preserve changes)
+```bash
+git reset --soft HEAD~1
+```
+### Git - Force Pull GitHub to Local— Overwrite Local
+```bash
+git fetch origin && git reset --hard origin/main
+```
+### Git - Force Push Local to GitHub — Overwrite Remote
+```bash
+git push origin main --force
+```
+### Git - Initial Repo Setup (one-time)
+```bash
+git init && \
+git remote add origin git@github.com:don-ferris/repo_name.git && \
+git add . && git commit -m "Initial commit" && \
+git push -u origin main
+```

@@ -67,7 +67,7 @@
 
 ---
 
-### [💾](https://github.com/ikatyang/emoji-cheat-sheet/blob/master/README.md?utm_source=chatgpt.com)  Backup & Restore
+### [💾](https://github.com/ikatyang/emoji-cheat-sheet/blob/master/README.md)  Backup & Restore
 
 #### Backup
 - Backup archives stored in BACKUP/
@@ -92,7 +92,8 @@ docker compose up -d
 
 ---
 
-### [🛠️](https://github.com/ikatyang/emoji-cheat-sheet/blob/master/README.md?utm_source=chatgpt.com)  Useful Commands
+## [🛠️](https://github.com/ikatyang/emoji-cheat-sheet/blob/master/README.md)  Useful Commands
+### Docker
 #### Start Docker container
 ```bash
 docker compose up -d
@@ -105,6 +106,7 @@ docker compose logs -f
 ```bash
 docker exec -it actual /bin/Backup on $(date +'%Y-%m-%d')sh
 ```
+### Git
 #### Git - Stage + Commit + Push Changes
 ```bash
 git add . && git commit -m "Update on $(date +'%Y-%m-%d')" && git push

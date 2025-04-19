@@ -73,7 +73,7 @@
 - Backup archives stored in BACKUP/
 - To create a new backup:
 ```bash
-tar -czf BACKUP/actual-$(date +'%Y-%m-%d').tar.gz ./data
+tar -czf BACKUP/[service_name]-$(date +'%Y-%m-%d').tar.gz ./data
 ```
 - Commit & push to GitHub to version it
 ```bash
@@ -83,7 +83,7 @@ git add . && git commit -m "Backup on $(date +'%Y-%m-%d') " && git push
 1.	Clone the repo
 2.	Extract the desired archive to ./data:
 ```bash
-tar -xzf BACKUP/actual-2025-04-18.tar.gz -C ./data
+tar -xzf BACKUP/[service_name]-[backup_date].tar.gz -C ./data
 ```
 3. Recreate the container:
 ```bash
@@ -104,7 +104,7 @@ docker compose logs -f
 ```
 #### Open shell inside Docker container
 ```bash
-docker exec -it actual /bin/Backup on $(date +'%Y-%m-%d')sh
+docker exec -it [container_name] /bin/Backup on $(date +'%Y-%m-%d')sh
 ```
 ### Git
 #### Git - Stage + Commit + Push Changes

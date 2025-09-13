@@ -4,13 +4,13 @@
 The purpose of my homelab, a collection of hardware and software, is to provide online and digital services that make my digital life rich, robust, and convenient while also protecting the privacy and confidentiality of my personal data through self-hosting.
 
 ## GOALS
-- Run services that improve my daily life — such as media servers, home automation, and personal websites.
+- Run services that improve my daily life — such as media servers, home automation, personal financial and project management, websites, and much more.
 - Make everything as private and secure as possible, by keeping my data under my control.
-- Reduce my dependence on cloud services (Google, Dropbox, etc.) for sensitive files and data.
+- Reduce (eliminate, if possible) my dependence on cloud services (Google, Dropbox, etc.) for sensitive files and data.
 - Build systems that are fun to use, reliable during power or internet outages, and easy to upgrade over time.
 - Learn and experiment with new technology at my own pace.
   
-# Homelab Meta Project Plan - Purpose & Goals
+# Homelab (This) Meta Project Plan - Purpose & Goals
 
 ## PURPOSE
 This meta project plan is an overview for the many projects that will collectively result in my homelab. In particular, this plan will focus on infrastructure, standards, procedures, and methods for making sure these services are stable and highly reliable, well documented, and able to be quickly recovered if something goes wrong.

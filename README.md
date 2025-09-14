@@ -95,3 +95,60 @@ These services are always running unless shut down for power savings/outages, wi
 - Paperless (scanned documents)
 - NFS/SMB network storage connectors
 - Watchtower, Autoheal, Uptime Kuma, Portainer (for local containers and monitoring)
+
+### Standard Project File/Folder Structure
+
+Each homelab project is organized using the following file and folder structure. This layout ensures that documentation, configuration, user data, scripts, and backups are easy to find and maintain. All Docker volumes use bind mounts, with each project’s data stored in its own `data/` directory for simple backup and recovery.
+
+```
+[project-name]/
+├── README.md            # Project documentation, including setup, backup/restore instructions
+├── docker-compose.yml   # Defines all containers and settings for this service
+├── .env                 # Stores configuration and secrets, referenced by docker-compose
+├── data/                # Contains all user-generated data and runtime files
+├── scripts/             # Helper scripts for setup, backup, restore, and updates
+├── backup/              # Local archive backups (e.g. tarballs, database dumps)
+├── docs/                # Optional: extended documentation, references, or changelogs
+```
+
+This structure makes it easy to standardize service setup, automate backup routines, and quickly restore any service if needed. Every project must include a complete `README.md` based on the standardized template, and all user data stays in `data/` for consistency.
+
+### Security Standards & Practices
+
+- **SSH Access:**  
+  - Disable password-based login for SSH; require key-based authentication on all servers and services; use non-standard port numbers for SSH connections.
+  - Use Fail2ban to monitor and block repeated failed login attempts, protecting SSH and other critical services from brute-force attacks.
+  - Regularly update and rotate SSH keys. Never store keys or secrets in any public repository.
+
+- **Authentication & Passwords:**  
+  - Use strong, random, and unique passwords (managed by Bitwarden or another secure password manager).
+  - Enable multi-factor authentication (MFA) wherever possible for web interfaces, reverse proxies, and critical services.
+  - Store all sensitive credentials in encrypted password managers or private, access-restricted wiki pages—never in README or .env files unless encrypted and private.
+
+- **Network Security:**  
+  - Expose only required service ports to the network or the internet; use secure tunnels (Cloudflare Tunnel, Netbird, VPN) for remote access.
+  - Plan for future network segmentation (VLANs), keeping admin/management interfaces isolated from regular device or guest traffic.
+  - Implement firewall rules to block unnecessary inter-network and inter-container connections for all Docker, server, and home devices.
+
+- **Containerization Security:**  
+  - Always use official or trusted Docker images, and keep containers updated via Watchtower.
+  - Avoid running containers as root or in privileged mode unless absolutely necessary.
+  - Assign the minimum necessary permissions/capabilities to all containers (using seccomp, AppArmor, or similar tools).
+  - Keep volumes bind-mounted to directories with correct permissions.
+  - Use internal networks for Docker containers and restrict external access with reverse proxies.
+
+- **Update & Patch Management:**  
+  - Schedule and perform regular updates for all OSes, packages, and containers.
+  - Track current versions and update cycles in the documentation and/or project wiki.
+
+- **Monitoring & Alerts:**  
+  - Use simple monitoring tools (e.g., Uptime Kuma) to track service health.
+  - Set up notification systems for outages, failed login attempts, or persistent/unusual network activity.
+  - Only escalate security alerts for confirmed threats, persistent brute-force attempts, or successful breaches.
+
+- **Security Audit & Documentation:**  
+  - Document security measures for every service and server in the security folder.
+  - Perform periodic reviews of users, credentials, SSH key access, firewall rules, and container hygiene.
+
+All homelab projects must follow these practices from initial setup through ongoing maintenance, keeping personal data protected and services resilient against intrusion or loss.
+

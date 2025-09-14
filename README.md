@@ -87,6 +87,7 @@ The following core services are always running, fully documented, and have regul
 These services are always running unless shut down for power savings/outages, with complete documentation and backup/restore:
 - Jellyfin (media server)
 - Home Assistant (automation/hub)
+- OpenWebUI + Ollama for local AI/LLM (primarily used by Home Assistant but also for general household use/information
 - Audiobookshelf/Libation (audiobooks)
 - Kavita or Calibre + Readarr (ebooks, comics)
 - Sonarr/Radarr/Lidarr/Overseerr (media management)

@@ -1,3 +1,32 @@
+## Table of Contents
+
+- [HomeLab - Purpose & Goals](#homelab---purpose--goals)
+  - [PURPOSE](#purpose)
+  - [GOALS](#goals)
+- [Homelab Meta Project Plan - Purpose & Goals](#homelab-this-meta-project-plan---purpose--goals)
+  - [PURPOSE](#purpose-1)
+  - [GOALS](#goals-1)
+- [WILLWIF: What It Looks Like When It’s Finished](#willwif-what-it-looks-like-when-its-finished)
+  - [User Experience](#user-experience)
+  - [Reliability and Recovery](#reliability-and-recovery)
+  - [Security and Privacy](#security-and-privacy)
+  - [Documentation](#documentation)
+  - [Services](#services)
+    - [Always-On (VPS)](#always-on-vps)
+    - [On Unless Disabled/Outage (BoraBora/local)](#on-unless-disabledoutage-boraboralocal)
+- [Standard Project File/Folder Structure](#standard-project-filefolder-structure)
+- [Security Standards & Practices](#security-standards--practices)
+  - [SSH Access](#ssh-access)
+  - [Authentication & Passwords](#authentication--passwords)
+  - [Network Security](#network-security)
+  - [Containerization Security](#containerization-security)
+  - [Update & Patch Management](#update--patch-management)
+  - [Server Hardening](#server-hardening)
+  - [Container Hardening](#container-hardening)
+  - [Monitoring & Alerts](#monitoring--alerts)
+  - [Security Audit & Documentation](#security-audit--documentation)
+
+
 # HomeLab - Purpose & Goals
 
 ## PURPOSE
@@ -6,7 +35,7 @@ The purpose of my homelab, a collection of hardware and software, is to provide 
 ## GOALS
 - Run services that improve my daily life — such as media servers, home automation, personal financial and project management, websites, and much more.
 - Make everything as private and secure as possible, by keeping my data under my control.
-- Reduce (eliminate, if possible) my dependence on cloud services (Google, Dropbox, etc.) for sensitive files and data.
+- Reduce (eliminate, if possible) my dependence on commercial/3rd party cloud services (Dropbox, etc.) - especially those seeking to monetize and profit from my personal data (Google, Meta, etc.) - for sensitive files and data.
 - Build systems that are fun to use, reliable during power or internet outages, and easy to upgrade over time.
 - Learn and experiment with new technology at my own pace.
   

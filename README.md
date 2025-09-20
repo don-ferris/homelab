@@ -144,33 +144,33 @@ This structure makes it easy to standardize service setup, automate backup routi
 
 ### Security Standards & Practices
 
-- **SSH Access:**  
+#### SSH Access:
   - Disable password-based login for SSH; require key-based authentication on all servers and services; use non-standard port numbers for SSH connections.
   - Use Fail2ban to monitor and block repeated failed login attempts, protecting SSH and other critical services from brute-force attacks.
   - Regularly update and rotate SSH keys. Never store keys or secrets in any public repository.
 
-- **Authentication & Passwords:**  
+#### Authentication & Passwords:
   - Use strong, random, and unique passwords (managed by Bitwarden or another secure password manager).
   - Enable multi-factor authentication (MFA) wherever possible for web interfaces, reverse proxies, and critical services.
   - Store all sensitive credentials in encrypted password managers or private, access-restricted wiki pages—never in README or .env files unless encrypted and private.
 
-- **Network Security:**  
+#### Network Security:
   - Expose only required service ports to the network or the internet; use secure tunnels (Cloudflare Tunnel, Netbird, VPN) for remote access.
   - Plan for future network segmentation (VLANs), keeping admin/management interfaces isolated from regular device or guest traffic.
   - Implement firewall rules to block unnecessary inter-network and inter-container connections for all Docker, server, and home devices.
 
-- **Containerization Security:**  
+#### Containerization Security:
   - Always use official or trusted Docker images, and keep containers updated via Watchtower.
   - Avoid running containers as root or in privileged mode unless absolutely necessary.
   - Assign the minimum necessary permissions/capabilities to all containers (using seccomp, AppArmor, or similar tools).
   - Keep volumes bind-mounted to directories with correct permissions.
   - Use internal networks for Docker containers and restrict external access with reverse proxies.
 
-- **Update & Patch Management:**  
+#### Update & Patch Management:
   - Schedule and perform regular updates for all OSes, packages, and containers.
   - Track current versions and update cycles in the documentation and/or project wiki.
 
-- **Server Hardening:**
+#### Server Hardening:
   - Remove or disable unnecessary services and open ports.
   - Enforce strong password policies; disable accounts with empty passwords.
   - Always enable firewalls and restrict network traffic to trusted IP ranges.
@@ -183,7 +183,7 @@ This structure makes it easy to standardize service setup, automate backup routi
   - Implement system logging and auditing (central logging to monitor for unwanted changes).
   - Remove unnecessary packages and users from each server.
     
-- **Container Hardening:**
+#### Container Hardening
   - Use official or trusted base images and scan containers for vulnerabilities before deploying.[2][5][8]
   - Remove unnecessary packages and services from container images.[5][2]
   - Drop unneeded Linux capabilities (`--cap-drop all` then add only the required ones).[3][9]
@@ -195,12 +195,12 @@ This structure makes it easy to standardize service setup, automate backup routi
   - Store sensitive config/secrets outside of images and limit environment variable exposure to only what’s required.[3][4]
   - Regularly rebuild container images to patch vulnerabilities.[2][10]
   
-- **Monitoring & Alerts:**  
+#### Monitoring & Alerts:
   - Use simple monitoring tools (e.g., Uptime Kuma) to track service health.
   - Set up notification systems for outages, failed login attempts, or persistent/unusual network activity.
   - Only escalate security alerts for confirmed threats, persistent brute-force attempts, or successful breaches.
 
-- **Security Audit & Documentation:**  
+#### Security Audit & Documentation:
   - Document security measures for every service and server in the security folder.
   - Perform periodic reviews of users, credentials, SSH key access, firewall rules, and container hygiene.
 
